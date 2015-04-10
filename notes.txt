@@ -1,0 +1,30 @@
+Simulation Ideas:
+  Enter initial conditions, and then let the server do all the heavy lifting
+  simulation will ouput some sort of data file that describes the various motions
+    this way there all the calculations can be done on faster systems
+  take this output file and 'play' it like a movie --> won't be interactive, but this is a trade-off for speed
+    ability to rotate the view? scrub through the data, not just play staticly like a movie
+    zoom, and move and whatnot
+	
+Implementation Ideas:
+  Particle:
+    basic particle data struct
+    radius
+    mass
+    velocity vector
+  Space:
+    Keeps track of all the particles in the space
+    dimensions of space
+      maybe split up into multiple spaces: 1,2,3 etc
+    time-tick func that makes all the particles act
+      for every particle, need to calculate the forces of gravity between every other particle
+      from this calculate the net effect of gravity
+      only after all these vectors have been calculated, then move, don't move the particles before <---
+  Gravity:
+    given two particles, this spits out the force of gravity between them
+  FileMaker:
+    creates a file
+      hangs around as somebody gives particle positions to it, and it formats and writes that particle
+
+REAL NOTES:
+  when a function fails, it will return -1, if success reutrn 0
