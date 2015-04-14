@@ -1,14 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -std=c99 -g
-OBJ = util_space_3.o test.o
-SRC = util_space_3.c test.c
+CFLAGS = -Wall -std=c99 -g -lm
+OBJ = vector3.o simulator.o particle.o
+SRC = vector3.c simulator.c particle.c
 
 
 %.o:
-	$(CC) $(CFLAGS) -c -o $@ $*.c
+	$(CC) -c -o $@ $*.c $(CFLAGS)
 
 make: $(OBJ)
-	$(CC) $(CFLAGS) -o test $(OBJ)
+	$(CC) -o simulator $(OBJ) $(CFLAGS)
 
 clean:
-	rm -f *.o test
+	rm -f *.o simulator

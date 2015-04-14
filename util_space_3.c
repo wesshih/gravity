@@ -2,28 +2,22 @@
 #include <math.h>
 #include <stdlib.h>
 
-// Vector and Vector_T only fns
-Vec3 make_Vec3(float x, float y, float z);
-float dot(Vec3 v1, Vec3 v2);
-Vec3 cross(Vec3 v1, Vec3 v2);
 
-// Matrix only fns
-M3x3 make_M3x3(Vec3 c1, Vec3 c2, Vec3 c3);
-M3x3 make_M3x3(Vec3 r1, Vec3 r2, Vec3 r3);
-
-// shared math fns
-Vec3 add(Vec3 v1, Vec3 v2);
-M3x3 add(M3x3 m1, M3x3 m2);
-Vec3 sub(Vec3 v1, Vec3 v2);
-M3x3 sub(M3x3 m1, M3x3 m2);
-M3x3 mul(M3x3 m1, M3x3 m2);
-Vec3 mul(Vec3 v1, M3x3 m2);
-M3x3 transpose(M3x3 m);
-
-// maybe leave these in
-Vec3 scale(Vec3 v, float scalar);
-Vec3 norm(Vec3 v);
-float mag(Vec3 v);
+//M3x3 make_M3x3(Vec3 r1, Vec3 r2, Vec3 r3);
+//
+//// shared math fns
+//Vec3 add(Vec3 v1, Vec3 v2);
+//M3x3 add(M3x3 m1, M3x3 m2);
+//Vec3 sub(Vec3 v1, Vec3 v2);
+//M3x3 sub(M3x3 m1, M3x3 m2);
+//M3x3 mul(M3x3 m1, M3x3 m2);
+//Vec3 mul(Vec3 v1, M3x3 m2);
+//M3x3 transpose(M3x3 m);
+//
+//// maybe leave these in
+//Vec3 scale(Vec3 v, float scalar);
+//Vec3 norm(Vec3 v);
+//float mag(Vec3 v);
 
 // makes Vec
 Vec3 make_Vec3(float x, float y, float z) {
@@ -96,8 +90,8 @@ Vec3 cross(Vec3 v1, Vec3 v2) {
 
 M3x3 mul(M3x3 m1, M3x3 m2) {
   if (m1 == NULL || m2 == NULL) return NULL;
-  Vec3 c1 = make_Vec3
-  return make_M3x3(c1, c2, c3);
+  //Vec3 c1 = make_Vec3
+  return NULL;//make_M3x3(c1, c2, c3);
 }
 
 // multiply by scalar
@@ -112,7 +106,7 @@ Vec3 scale(Vec3 v, float scalar) {
 // normalize vector
 Vec3 norm(Vec3 v) {
   if (v == NULL) return NULL;
-  return make_Vec3(v, 1/Vec3_mag(v));
+  return make_Vec3(v, 1/mag(v));
 }
 
 // return the magnitude
